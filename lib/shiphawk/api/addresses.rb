@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
   # Address API
   #
   # @see https://shiphawk.com/api-docs
@@ -8,7 +8,7 @@ module ShipHawk
   class Addresses < Resource
 
     def self.search(params={})
-      response, api_key = ShipHawk::ApiClient.request(:get, '/addresses/search', @api_key, params)
+      response, api_key = Shiphawk::ApiClient.request(:get, '/addresses/search', @api_key, params)
       JSON.parse(response.to_json) if response
     end
   end

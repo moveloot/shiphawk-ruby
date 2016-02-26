@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
 
   # Shipments API
   #
@@ -14,8 +14,8 @@ module ShipHawk
     #         [ tracking_number ], string, required
 
     def self.track(params={})
-      response, api_key = ShipHawk::ApiClient.request(:get, '/public/track', @api_key, params)
-      ShipHawk::Util::convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:get, '/public/track', @api_key, params)
+      Shiphawk::Util::convert_to_Shiphawk_object(response, api_key) if response
     end
 
   end

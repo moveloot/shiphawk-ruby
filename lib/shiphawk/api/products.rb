@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
   # Products API
   #
   # @see https://shiphawk.com/api-docs
@@ -8,13 +8,13 @@ module ShipHawk
   class Products < Resource
 
     def self.find_by(product_sku)
-      response, api_key = ShipHawk::ApiClient.request(:get, "/products/#{product_sku}", @api_key, {}, {}, true)
-      ShipHawk::Util::convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:get, "/products/#{product_sku}", @api_key, {}, {}, true)
+      Shiphawk::Util::convert_to_Shiphawk_object(response, api_key) if response
     end
 
     def self.build(params={})
-      response, api_key = ShipHawk::ApiClient.request(:post, '/products', @api_key, params, {}, true)
-      ShipHawk::Util::convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:post, '/products', @api_key, params, {}, true)
+      Shiphawk::Util::convert_to_Shiphawk_object(response, api_key) if response
     end
   end
 end

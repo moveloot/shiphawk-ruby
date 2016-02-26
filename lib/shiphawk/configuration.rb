@@ -1,7 +1,7 @@
 require 'uri'
 require 'singleton'
 
-module ShipHawk
+module Shiphawk
   class Configuration
 
     include Singleton
@@ -136,7 +136,7 @@ module ShipHawk
 
 
     def api_client
-      @client ||= ShipHawk::ApiClient.new
+      @client ||= Shiphawk::ApiClient.new
     end
 
     def scheme=(scheme)

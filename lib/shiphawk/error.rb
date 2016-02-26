@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
   class Error < StandardError
     attr_reader :message
     attr_reader :http_status

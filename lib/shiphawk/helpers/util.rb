@@ -1,9 +1,9 @@
-module ShipHawk
+module Shiphawk
   module Util
     extend self
     def objects_to_ids(obj)
       case obj
-        when ShipHawk::Resource
+        when Shiphawk::Resource
           return {:id => obj.id}
         when Hash
           result = {}
@@ -16,13 +16,13 @@ module ShipHawk
       end
     end
 
-    def convert_to_ShipHawk_object(response, api_key, parent=nil, name=nil)
+    def convert_to_Shiphawk_object(response, api_key, parent=nil, name=nil)
 
       case response
         when Array
-          response.map { |i| convert_to_ShipHawk_object(i, api_key, parent) }
+          response.map { |i| convert_to_Shiphawk_object(i, api_key, parent) }
         when Hash
-          ShipHawk::ShipHawkObject.construct_from(response, api_key, parent, name)
+          Shiphawk::ShiphawkObject.construct_from(response, api_key, parent, name)
         else
           response
       end

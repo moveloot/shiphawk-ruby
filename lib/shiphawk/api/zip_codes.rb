@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
     # Zip Codes API
     #
     # @see https://shiphawk.com/api-docs
@@ -14,8 +14,8 @@ module ShipHawk
     # @return [Object<ZipCods>]
 
     def self.search(params={})
-      response, api_key = ShipHawk::ApiClient.request(:get, '/zip_codes/search', api_key, params)
-      ShipHawk::Util.convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:get, '/zip_codes/search', api_key, params)
+      Shiphawk::Util.convert_to_Shiphawk_object(response, api_key) if response
     end
 
   end

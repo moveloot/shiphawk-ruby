@@ -1,5 +1,5 @@
-module ShipHawk
-  class ShipHawkObject
+module Shiphawk
+  class ShiphawkObject
     include Enumerable
 
     attr_accessor :parent, :name, :api_key, :unsaved_values
@@ -39,7 +39,7 @@ module ShipHawk
       end
 
       values.each do |k, v|
-        @values[k] = ShipHawk::Util.convert_to_ShipHawk_object(v, api_key, self, k)
+        @values[k] = Shiphawk::Util.convert_to_Shiphawk_object(v, api_key, self, k)
         @transient_values.delete(k)
         @unsaved_values.delete(k)
       end
@@ -95,7 +95,7 @@ module ShipHawk
 
         values[key] = value
 
-        if value.is_a?(ShipHawk::ShipHawkObject)
+        if value.is_a?(Shiphawk::ShiphawkObject)
           values[key] = flatten_unsaved(value)
         end
       end

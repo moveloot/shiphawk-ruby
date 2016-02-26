@@ -5,13 +5,13 @@ require 'shiphawk/version'
 
 Gem::Specification.new do |spec|
   spec.name           = 'shiphawk'
-  spec.version        = ShipHawk::VERSION
+  spec.version        = Shiphawk::VERSION
   spec.date           = Time.now.strftime("%Y-%m-%d")
-  spec.summary        = 'ShipHawk Ruby Client Library'
-  spec.description    = %q{ShipHawk, technology that delivers. See https://shiphawk.com for details.}
+  spec.summary        = 'Shiphawk Ruby Client Library'
+  spec.description    = %q{Shiphawk, technology that delivers. See https://shiphawk.com for details.}
   spec.authors        = ['Alex Hawkins']
   spec.email          = 'alex.hawkins@shiphawk.com'
-  spec.homepage       = 'https://github.com/ShipHawk/shiphawk-ruby'
+  spec.homepage       = 'https://github.com/Shiphawk/shiphawk-ruby'
   spec.license        = 'MIT'
 
   spec.files          = `git ls-files -z`.split("\x0")

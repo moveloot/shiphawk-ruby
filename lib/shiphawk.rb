@@ -30,10 +30,10 @@ require 'shiphawk/api/public'
 
 
 
-module ShipHawk
+module Shiphawk
   class << self
     # Configure sdk using block.
-    # ShipHawk.configure do |config|
+    # Shiphawk.configure do |config|
     #   config.api_key  = "xxx"
     #   config.username = "xxx"
     #   config.password = "xxx"

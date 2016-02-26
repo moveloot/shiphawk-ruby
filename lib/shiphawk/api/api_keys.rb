@@ -1,4 +1,4 @@
-module ShipHawk
+module Shiphawk
 
   # ApiKeys API
   #
@@ -10,14 +10,14 @@ module ShipHawk
 
     # Regenerate SandBox API key for your account
     def self.regenerate_sandbox
-      response, api_key = ShipHawk::ApiClient.request(:put, '/api_keys/sandbox', @api_key)
-      ShipHawk::Util::convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:put, '/api_keys/sandbox', @api_key)
+      Shiphawk::Util::convert_to_Shiphawk_object(response, api_key) if response
     end
 
     # Regenerate Production API key for your account
     def self.regenerate_production
-      response, api_key = ShipHawk::ApiClient.request(:put, '/api_keys/production', @api_key)
-      ShipHawk::Util::convert_to_ShipHawk_object(response, api_key) if response
+      response, api_key = Shiphawk::ApiClient.request(:put, '/api_keys/production', @api_key)
+      Shiphawk::Util::convert_to_Shiphawk_object(response, api_key) if response
     end
 
   end

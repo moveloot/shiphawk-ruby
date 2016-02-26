@@ -1,5 +1,5 @@
-module ShipHawk
-  class Resource < ShipHawkObject
+module Shiphawk
+  class Resource < ShiphawkObject
     def self.class_name
       camel = self.name.split('::')[-1]
       snake = camel[0..0] + camel[1..-1].gsub(/([A-Z])/, '_\1')
@@ -22,14 +22,14 @@ module ShipHawk
     end
 
     def refresh
-      response, api_key = ShipHawk::ApiClient::request(:get, url, @api_key, @retrieve_options)
+      response, api_key = Shiphawk::ApiClient::request(:get, url, @api_key, @retrieve_options)
       refresh_from(response, api_key)
       self
     end
 
     def self.all(filters={}, api_key=nil)
-      response, api_key = ShipHawk::ApiClient::request(:get, url, api_key, filters)
-      ShipHawk::Util.convert_to_ShipHawk_object(response, api_key)
+      response, api_key = Shiphawk::ApiClient::request(:get, url, api_key, filters)
+      Shiphawk::Util.convert_to_Shiphawk_object(response, api_key)
     end
 
     def self.find(id, api_key=nil)
@@ -42,8 +42,8 @@ module ShipHawk
     def self.create(params={}, api_key=nil)
       wrapped_params = {}
       wrapped_params[self.class_name.to_sym] = params
-      response, api_key = ShipHawk::ApiClient::request(:post, self.url, api_key, wrapped_params)
-      ShipHawk::Util.convert_to_ShipHawk_object(response, api_key)
+      response, api_key = Shiphawk::ApiClient::request(:post, self.url, api_key, wrapped_params)
+      Shiphawk::Util.convert_to_Shiphawk_object(response, api_key)
     end
 
   end
