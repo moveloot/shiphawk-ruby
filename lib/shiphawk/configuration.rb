@@ -1,5 +1,6 @@
 require 'uri'
 require 'singleton'
+require 'logger'
 
 module Shiphawk
   class Configuration
