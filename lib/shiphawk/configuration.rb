@@ -118,7 +118,7 @@ module Shiphawk
       @ssl_version = 'TLSv1'
       @api_url = nil
       @debugging = false
-      @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @logger = Logger.new(STDOUT)
     end
 
 
