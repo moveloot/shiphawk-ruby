@@ -1,6 +1,5 @@
 require 'uri'
 require 'singleton'
-require 'logger'
 
 module Shiphawk
   class Configuration
@@ -57,19 +56,6 @@ module Shiphawk
     # Defines the access token (Bearer) used with OAuth2.
     attr_accessor :access_token
 
-    # Set this to enable/disable debugging. When enabled (set to true), HTTP request/response
-    # details will be logged with `logger.debug` (see the `logger` attribute).
-    # Default to false.
-    #
-    # @return [true, false]
-    attr_accessor :debugging
-
-    # Defines the logger used for debugging.
-    # Default to `Rails.logger` (when in Rails) or logging to STDOUT.
-    #
-    # @return [#debug]
-    attr_accessor :logger
-
     # Defines the temporary folder to store downloaded files
     # (for API endpoints that have file response).
     # Default to use `Tempfile`.
@@ -117,8 +103,6 @@ module Shiphawk
       @open_timeout = 30
       @ssl_version = 'TLSv1'
       @api_url = nil
-      @debugging = false
-      @logger = Logger.new(STDOUT)
     end
 
 
